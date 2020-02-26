@@ -1,11 +1,12 @@
 dir.create("data_raw", showWarnings = FALSE)
+
 download.file(url = "https://ndownloader.figshare.com/files/2292171",
-              destfile = "data_raw/portal_mammals.sqlite", mode = "wb")
-library(dplyr)
-library(dbplyr)
-mammals <- DBI::dbConnect(RSQLite::SQLite(), "data_raw/portal_mammals.sqlite")
-src_dbi(mammals)
-tbl(mammals, sql("SELECT year, species_id, plot_id FROM surveys"))
+              destfile = "data_raw/portal_mammals.sqlite", mode = "wb") ##loading the file 
+library(dplyr) ##importing the library for connecting database 
+library(dbplyr) ##importing the library for connecting database
+mammals <- DBI::dbConnect(RSQLite::SQLite(), "data_raw/portal_mammals.sqlite") ##connecting database 
+src_dbi(mammals) ## checking the connectivity
+tbl(mammals, sql("SELECT year, species_id, plot_id FROM surveys")) ##Querying the database with the SQL syntax
 surveys <- tbl(mammals, "surveys")
 surveys %>%
   select(year, species_id, plot_id)
