@@ -8,15 +8,17 @@ Working on big data requires a clean and robust approach on storing and accessin
 
 ### Workflow of SQLite->
 
-library(SQLite)       importing the SQLite in R enviroment 
+> library(SQLite)       importing the SQLite in R enviroment 
 
-Vish = dbConnect(drv="SQLite", dbname="country.sqlite")    connecting the SQLite file
+> vish<- dbConnect(drv="SQLite", dbname="country.sqlite")&nbsp;&nbsp;    ,connecting the SQLite file
 
-alltables = dbListTables(con) get alist of table 
+> vish  &nbsp;&nbsp;&nbsp; ,check wether the connection is established
 
+> alltables <-  dbListTables(vish)&nbsp;&nbsp;&nbsp;,get alist of table 
 
+> r1 <- dbGetQuery( vish,'select * from populationtable' )&nbsp;&nbsp;&nbsp;&nbsp; ,get the population table as data frame.
 
+> r2  <- dbGetQuery(vish, "SELECT population WHERE DATE(timeStamp) < DATE('now', 'weekday 0', '-7 days')")&nbsp;&nbsp;&nbsp;, find the entry  opf tyhe databas efrom last week
 
-
-
+> dbClearResult(r2)&nbsp;&nbsp; Clear the result of last screen
 ## Using DBI 
