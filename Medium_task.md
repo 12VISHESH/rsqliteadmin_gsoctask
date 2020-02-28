@@ -1,6 +1,6 @@
 # Document connection
 
-## using SQLite library 
+## Using SQLite library 
 
 SQLite is a software library that provides a relational database management system. The lite in SQLite means light weight in terms of setup, database administration, and required resource.SQLite uses dynamic types for tables. It means you can store any value in any column, regardless of the data type.
 
