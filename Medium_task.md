@@ -22,3 +22,22 @@ Working on big data requires a clean and robust approach on storing and accessin
 
 > dbClearResult(r2)&nbsp;&nbsp; Clear the result of last screen
 ## Using DBI 
+
+A database interface (DBI) definition for communication between R and relational database management systems. All classes in this package are virtual and need to be extended by the various R/DBMS implementations.
+
+DBI separates the connectivity to the DBMS into a “front-end” and a “back-end”. Applications use only the exposed front-end API. The back-end facilities that communicate with specific DBMSs (SQLite, MySQL, PostgreSQL, MonetDB, etc.) are provided by drivers (other packages) that get invoked automatically through S4 methods.
+
+### WorkFlow for DBI
+
+> install.packages("DBI")&nbsp;&nbsp;&nbsp;&nbsp;,installing the DBI package
+
+> install.packages("odbc")&nbsp;&nbsp;&nbsp;&nbsp;,installing the odbc package
+
+> library(odbc)&nbsp;&nbsp;&nbsp;&nbsp;, importing the library after installing
+
+> sort(unique(odbcListDrivers()[[1]]))&nbsp;&nbsp;&nbsp;&nbsp;verifying the odbc is recognizes the driver for connection or not 
+
+> vish <- dbConnect(odbc(), "DSN name")&nbsp;&nbsp;&nbsp;, where dsn stands for "data source network" and this command used for open the database.
+
+
+
