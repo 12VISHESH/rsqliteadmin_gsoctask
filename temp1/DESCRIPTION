@@ -1,0 +1,10 @@
+Package: temp1
+Type: Package
+Title: RSQlite 
+Version: 0.1.0
+Author: Vishesh Tripathi
+Maintainer: visheshtripathivns505@gmail.com
+Description: its based on  various parameter  for  SQLite  database . 
+License: Not till yet
+Encoding: UTF-8
+LazyData: true
