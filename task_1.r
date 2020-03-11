@@ -33,12 +33,21 @@ select(species_id, sex, weight)
 
 data_subset %>%
   select(-sex)
+
 plots <- tbl(mammals, "plots")
+
 plots
+
 surveys
+
 show_query(head(surveys,n=10))
+
 surveys %>%
-  filter(weight<6)%>%
-  select(species_id, sex, weight)
+
+filter(weight<6)%>%
+
+select(species_id, sex, weight)
+
 data_subset%>%
-  select(-sex)
+
+select(-sex)
