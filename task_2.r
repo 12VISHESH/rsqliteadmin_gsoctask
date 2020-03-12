@@ -6,6 +6,7 @@ View(employess)
 
 male_employess<- function(sqldf){
   sqldf("SELECT * FROM employess where gender ='m'")
+  return(sqldf)
 }
 
 name_count_employee <- function(sqldf){
@@ -13,6 +14,7 @@ name_count_employee <- function(sqldf){
         FROM employes
         where firstname!='rudi'
         Group by firstname")
+  return(sqldf)
 }
 
 # using 'lower'to evaluate all names  as lowercase to ensure case insensitivity
@@ -25,6 +27,7 @@ employess_call <- function(sqldf){
         WHEN lower(firstname)='stewart'THEN 1
         ELSE 0
         FRom employess")
+  return(sqldf)
 }
 
 #multi- table operation#
@@ -33,6 +36,7 @@ left_join <- function(sqldf){
   sqldf("SELECT *
         from order b
         LEFt join employee a ona.id=b.id")
+  return(sqldf)
 } 
 
 # "right join" isn't supported in sqldf but switiching order of tables and left join is equivalent function
@@ -41,5 +45,6 @@ right_join <- function(sqldf){
   sqldf("SELECT *
         FROM order b
         LEFT JOIN employee a ON a.id=b.id")
+  return(sqldf)
 }
 
