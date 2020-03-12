@@ -42,3 +42,4 @@ right_join <- function(sqldf){
         FROM order b
         LEFT JOIN employee a ON a.id=b.id")
 }
+
