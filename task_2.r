@@ -51,7 +51,7 @@ right_join <- function(fn5){
 
 ## for filtering the query we can pass many parameter like table name , column name,value
 
-Query <- function (table_name, column_names, values) {
+Queries_db <- function (table_name, column_names, values) {
     
     string <- paste ('SELECT * FROM', table_name, 'WHERE')
 
@@ -63,7 +63,7 @@ Query <- function (table_name, column_names, values) {
     
     string <- paste (string, column_names[n], "=", values[n])
     
-    ans <- dbGetQuery (employee, string)
+    vish <- dbGetQuery (employee, string)
     
-    return (ans)
+    return (vish)
 }
