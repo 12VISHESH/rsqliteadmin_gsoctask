@@ -1,0 +1,11 @@
+Package: database
+Type: Package
+Title: Perform query in  Database
+Version: 0.1.0
+Author: Vishesh Tripathi
+Maintainer: The package maintainer <visheshtripathivns505@gmail.com>
+Description: it done query in database by passing arugument which is follows  
+           table_name, column_names, values
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
